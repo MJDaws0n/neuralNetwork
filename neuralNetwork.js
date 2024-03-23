@@ -41,13 +41,13 @@ function neuralNetwork(inputs, inputWeights, inputBiases, hiddenWeights, hiddenB
 
     // We have a list of all the ouputs, we must just aggregate them
     function aggregateOutputs(outputs, numOfOutputs) {
-        var aggregatedOutputs = [];
-        var chunkSize = Math.ceil(outputs.length / numOfOutputs);
+        let aggregatedOutputs = [];
+        let chunkSize = Math.ceil(outputs.length / numOfOutputs);
     
         for (let i = 0; i < outputs.length; i += chunkSize) {
-            var chunk = outputs.slice(i, i + chunkSize);
-            var sum = chunk.reduce((acc, curr) => acc + curr, 0);
-            aggregatedOutputs.push(sum);
+            let chunk = outputs.slice(i, i + chunkSize);
+            let average = chunk.reduce((acc, curr) => acc + curr, 0) / chunk.length;
+            aggregatedOutputs.push(average);
         }
     
         return aggregatedOutputs;

@@ -17,5 +17,6 @@ function generateRandomBiases(num, min, max) {
 }
 module.exports = {
     generateRandomWeights: generateRandomWeights,
-    generateRandomBiases: generateRandomBiases
+    generateRandomBiases: generateRandomBiases,
+    getRandomNumber: getRandomNumber
 };
